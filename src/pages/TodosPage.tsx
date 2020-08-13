@@ -4,7 +4,7 @@ import { TodoList } from "../components/TodoList";
 import { ITodo } from "../components/interfaces";
 
 export const TodoPage: React.FC = () => {
-    const [todos, setTodos] = useState<ITodo[]>([]);
+  const [todos, setTodos] = useState<ITodo[]>([]);
 
   useEffect(() => {
     const saved = JSON.parse(localStorage.getItem("todos") || "[]") as ITodo[];
@@ -14,6 +14,7 @@ export const TodoPage: React.FC = () => {
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
+
   const addHandler = (title: string) => {
     const newTodo: ITodo = {
       title,
@@ -22,6 +23,7 @@ export const TodoPage: React.FC = () => {
     };
     setTodos((prev) => [newTodo, ...todos]);
   };
+
   const toggleHandler = (id: number) => {
     setTodos((prev) =>
       prev.map((n) => {
@@ -35,9 +37,11 @@ export const TodoPage: React.FC = () => {
       })
     );
   };
+
   const removeHandler = (id: number) => {
     setTodos((prev) => prev.filter((todo) => todo.id !== id));
   };
+  
   return (
     <>
       <TodoForm addHandler={addHandler} />

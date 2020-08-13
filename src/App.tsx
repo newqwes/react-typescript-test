@@ -1,5 +1,6 @@
 import React from "react";
 import { Navbar } from "./components/Navbar";
+import { TodoPage } from "./pages/TodosPage";
 
 const App: React.FC = () => {
   
@@ -7,7 +8,7 @@ const App: React.FC = () => {
     <>
       <Navbar />
       <div className="container">
-        
+        <TodoPage />
       </div>
     </>
   );

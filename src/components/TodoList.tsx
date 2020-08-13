@@ -1,11 +1,5 @@
 import React from "react";
-import { ITodo } from "./interfaces";
-
-type TodoListProps = {
-  todos: ITodo[];
-  toggleHandler: (id: number) => void;
-  removeHandler: (id: number) => void;
-};
+import { TodoListProps } from "./interfaces";
 
 export const TodoList: React.FC<TodoListProps> = ({
   todos,
